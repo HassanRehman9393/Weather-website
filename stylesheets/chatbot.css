@@ -132,6 +132,7 @@
 
 @media (max-width: 480px) {
   .chat-container {
-    max-height: 70%; /* Further limit height for very small screens */
+    height: 250px; /* Further limit height for very small screens */
+    width: 325px;
   }
 }
