@@ -364,7 +364,7 @@ header.header {
     }
 
     .right-side {
-        position: fixed;  /* Fix it to the viewport */
+       
         top: 0;  /* Stick to the top */
         right: 0;  /* Stick to the right */
         padding: 20px;
