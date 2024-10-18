@@ -1,0 +1,210 @@
+/* Table Styles */
+.head {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    margin-top: 10px;
+}
+
+.table-container {
+    margin: 10px;
+    overflow-x: auto; /* Makes the table scrollable on smaller screens */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-table {
+    width: 1000px; /* Original width for larger screens */
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.weather-table th,
+.weather-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Light border for dark theme */
+}
+
+.weather-table th {
+    background-color: rgba(39, 106, 214, 0.6);
+    color: white;
+    font-size: 20px;
+}
+
+.weather-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Alternating row color for dark theme */
+}
+
+.weather-table tr:hover {
+    background-color: rgba(39, 106, 214, 0.4); /* Highlight on hover */
+    color: white;
+}
+
+.weather-table td {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background for table cells */
+    color: white;
+    font-size: 18px;
+}
+
+/* Light Theme */
+body.light-theme .weather-table th {
+    background-color: #469ed4; /* Light theme header background */
+    color: #333; /* Light theme header text color */
+}
+
+body.light-theme .weather-table td {
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for table cells */
+    color: #333; /* Light theme text color */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light border for light theme */
+}
+
+body.light-theme .weather-table tr:nth-child(even) {
+    background-color: rgba(230, 230, 230, 0.5); /* Alternating row color for light theme */
+}
+
+body.light-theme .weather-table tr:hover {
+    background-color: rgba(39, 106, 214, 0.2); /* Light theme highlight on hover */
+}
+
+/* Pagination styles */
+#pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #276ad6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#pagination button:hover {
+    background-color: #194a96;
+}
+
+#pagination span {
+    margin: 0 10px;
+    font-size: 16px;
+    color: white;
+}
+
+body.light-theme #pagination button {
+    background-color: #469ed4;
+}
+
+/* Dropdown Menu Styles */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.filter-dropdown {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.filter-dropdown option {
+    background-color: white;
+    color: black;
+}
+
+.filter-container label {
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Light Theme for Dropdown */
+body.light-theme .filter-dropdown {
+    background-color: white;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+.filter-dropdown:hover {
+    background-color: rgba(39, 106, 214, 0.6);
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .weather-table {
+        width: 90%; /* Adjust width for tablets */
+    }
+
+    .head {
+        font-size: 24px; /* Smaller font size for headings on tablets */
+    }
+
+    .weather-table th, .weather-table td {
+        padding: 10px; /* Smaller padding for better fit */
+        font-size: 16px; /* Adjust font size for smaller devices */
+    }
+
+    #pagination span {
+        font-size: 14px; /* Adjust pagination text size */
+    }
+}
+
+@media (max-width: 768px) {
+    .weather-table {
+        width: 90%; /* Full width for smaller devices */
+    }
+
+    .head {
+        font-size: 20px; /* Adjust font size for headings on smaller devices */
+    }
+
+    .weather-table th, .weather-table td {
+        padding: 8px; /* Smaller padding for mobile */
+        font-size: 14px; /* Further adjust font size for mobile */
+    }
+
+    #pagination button {
+        margin: 5px 0; /* Margin for stacked buttons */
+    }
+
+    .filter-dropdown {
+        font-size: 14px; /* Adjust dropdown font size */
+        padding: 8px 16px; /* Smaller padding for dropdown */
+    }
+}
+
+@media (max-width: 480px) {
+    .head {
+        font-size: 18px; /* Smaller font size for headings on mobile */
+    }
+
+    .weather-table th, .weather-table td {
+        padding: 5px; /* Further reduce padding for mobile */
+        font-size: 12px; /* Further adjust font size for mobile */
+    }
+
+    #pagination button {
+        padding: 8px 10px; /* Smaller buttons for mobile */
+    }
+
+    .filter-dropdown {
+        padding: 5px 10px; /* Smaller padding for dropdown */
+    }
+}

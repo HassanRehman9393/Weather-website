@@ -1,0 +1,14 @@
+{
+  "name": "weather-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",  
+  "scripts": {
+    "start": "node chatbot.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "@google/generative-ai": "^0.0.1"
+  }
+}
