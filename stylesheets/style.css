@@ -407,87 +407,42 @@ header.header {
     }
 
     #map {
-        width: 400px;
-        height: 250px;
-    }
-
-    .weather-widget .separator{
-        width: 90%;
-    }
-
-    .center{
-        gap: 10px;
-
-    }
-
-    .right-side {
-        position: fixed;  /* Fix it to the viewport */
-        top: 0;  /* Stick to the top */
-        right: 0;  /* Stick to the right */
-        padding: 20px;
-        z-index: 1000;  /* Make sure it appears on top of other elements */ 
-        gap: 0px;
-    }
-
-    .right-side .temp-toggle label.switch {
-        transform: scale(0.8); /* Scale down the toggle switch */
-    }
-
-    .right-side img#themeToggle {
-        width: 30px;  /* Reduce the size of the theme toggle */
-        height: 30px;
-    }
-
-    .right-side .user-profile img {
-        width: 30px;  /* Reduce the size of the user profile image */
-        height: 30px;
-        border-radius: 50%;  /* Ensure it's still circular */
-    }
-
-    .right-side .temp-label {
-        font-size: 14px;  /* Reduce the font size */
-    }
-}
-
-
-@media (max-width: 390px) {
-    .website-name {
-        font-size: 24px;
-    }
-
-    .logo img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .weather-widget {
-        margin-bottom: 30px;
-        width: 80%;
-        padding: 20px;
-        height: auto;
-    }
-
-    #map {
         width: 350px;
         height: 250px;
     }
 
-    .weather-widget .separator{
+    .weather-widget .separator {
         width: 90%;
     }
 
-    .center{
+    .center {
         gap: 10px;
-
+        margin-top: 20px;
     }
 
+   .website-name{
+    font-size: 22px;
+   }
+
+   .logo img{
+    width: 40px;
+    height: 40px;
+   }
+
     .right-side {
-        position: fixed;  /* Fix it to the viewport */
-        top: 0;  /* Stick to the top */
-        right: 0;  /* Stick to the right */
-        padding: 20px;
-        z-index: 1000;  /* Make sure it appears on top of other elements */ 
-        gap: 0px;
+        position: fixed; /* Change to fixed to stay in the viewport */
+       
+        margin-right: 0px;
+        padding-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .temp-toggle {
+        margin-right: 2px;
+    }
+
+    .theme-toggle {
+        margin-right: 2px;
     }
 
     .right-side .temp-toggle label.switch {
@@ -495,8 +450,8 @@ header.header {
     }
 
     .right-side img#themeToggle {
-        width: 30px;  /* Reduce the size of the theme toggle */
-        height: 30px;
+        width: 35px;  /* Reduce the size of the theme toggle */
+        height: 35px;
     }
 
     .right-side .user-profile img {
@@ -509,4 +464,3 @@ header.header {
         font-size: 14px;  /* Reduce the font size */
     }
 }
-

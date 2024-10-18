@@ -191,6 +191,14 @@ body.light-theme .filter-dropdown {
 }
 
 @media (max-width: 480px) {
+    .weather-table {
+        width: 80%; /* Full width for smaller devices */
+    }
+
+    .filter-container label{
+        font-size: 18px;
+    }
+
     .head {
         font-size: 18px; /* Smaller font size for headings on mobile */
     }
@@ -205,6 +213,9 @@ body.light-theme .filter-dropdown {
     }
 
     .filter-dropdown {
+        margin-top: 5px;
+        width: 75%;
+        font-size: 14px; /* Further adjust dropdown font size */
         padding: 5px 10px; /* Smaller padding for dropdown */
     }
 }

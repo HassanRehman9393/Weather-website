@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="stylesheets/table.css" />
     <link rel="stylesheet" href="stylesheets/chatbot.css" />
     <link rel="stylesheet" href="stylesheets/widget.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -72,7 +74,7 @@
             <div class="weather-header">
                 <div class="location-info">
                     <h2>
-                        Weather for <span id="city-name">City Name</span>, 
+                        Weather for <span id="city-name">City Name</span>,
                         <span id="country-name">Country Name</span>
                     </h2>
                 </div>
@@ -80,7 +82,7 @@
                     <img id="weather-icon" src="" alt="Weather Icon" />
                 </div>
             </div>
-            
+
             <p class="weather-info">
                 <i class="fas fa-clock"></i> Last Updated:
                 <span id="local-time">--</span>
@@ -121,86 +123,86 @@
 
         <main class="main" id="main">
             <section class="weather-info">
-            <h2 class="head">5-Day Weather Forecast for City</h2>
-            <div class="filter-container">
-                <label for="filter-sort-dropdown">Filter/Sort: </label>
-                <select class="filter-dropdown" id="filter-dropdown">
-                    <option value="default">-- Filter/Sort Weather Data --</option>
-                    <option value="asc">Show temperatures in ascending order</option>
-                    <option value="desc">Show temperatures in descending order</option>
-                    <option value="rain">Filter out days without rain</option>
-                    <option value="highest">
-                        Show the day with the highest temperature
-                    </option>
-                </select>
+                <h2 class="head">5-Day Weather Forecast for City</h2>
+                <div class="filter-container">
+                    <label for="filter-sort-dropdown">Filter/Sort: </label>
+                    <select class="filter-dropdown" id="filter-dropdown">
+                        <option value="default">-- Filter/Sort Weather Data --</option>
+                        <option value="asc">Show temperatures in ascending order</option>
+                        <option value="desc">Show temperatures in descending order</option>
+                        <option value="rain">Filter out days without rain</option>
+                        <option value="highest">
+                            Show the day with the highest temperature
+                        </option>
+                    </select>
+                </div>
+                <div class="table-container">
+                    <table class="weather-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Weather Icon</th>
+                                <th>Temperature (°C)</th>
+                                <th>Weather Condition</th>
+                                <th>Rain Chance (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="weather-table-body">
+                            <tr>
+                                <td></td>
+                                <td><img /></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><img /></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><img /></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><img /></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><img /></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="pagination">
+                    <button id="prev-btn">Previous</button>
+                    <span id="page-info"></span>
+                    <button id="next-btn">Next</button>
+                </div>
+            </section>
+            <button id="chatToggle">💬</button>
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-header">Chatbot</div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">Hi there 👋<br>How can I help you today?</div>
+                </div>
+                <div class="input-area">
+                    <input type="text" id="userInput" placeholder="Type a message...">
+                    <button id="sendButton">Send</button>
+                </div>
             </div>
-            <div class="table-container">
-                <table class="weather-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Weather Icon</th>
-                            <th>Temperature (°C)</th>
-                            <th>Weather Condition</th>
-                            <th>Rain Chance (%)</th>
-                        </tr>
-                    </thead>
-                    <tbody id="weather-table-body">
-                        <tr>
-                            <td></td>
-                            <td><img /></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><img /></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><img /></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><img /></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><img /></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div id="pagination">
-                <button id="prev-btn">Previous</button>
-                <span id="page-info"></span>
-                <button id="next-btn">Next</button>
-            </div>
-        </section>
-        <button id="chatToggle">💬</button>
-        <div class="chat-container" id="chatContainer">
-            <div class="chat-header">Chatbot</div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot-message">Hi there 👋<br>How can I help you today?</div>
-            </div>
-            <div class="input-area">
-                <input type="text" id="userInput" placeholder="Type a message...">
-                <button id="sendButton">Send</button>
-            </div>
-        </div>
         </main>
     </div>
     <script>
