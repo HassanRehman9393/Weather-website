@@ -192,30 +192,30 @@ The application is deployed and accessible at: **[https://skyforecast-alpha.verc
 
 ```
 SkyForecast/
-┣ 📜 index.html                 # Main application entry point
-┣ 📜 README.md                  # Project documentation
-┣ 📜 package.json               # Project dependencies and scripts
-┣ 📂 stylesheets/               # CSS styling files
-┃ ┣ 📜 style.css               # Main application styles
-┃ ┣ 📜 stars.css               # Background star animation
-┃ ┣ 📜 sidebar.css             # Navigation sidebar styles
-┃ ┣ 📜 charts.css              # Chart visualization styles
-┃ ┣ 📜 table.css               # Weather table styles
-┃ ┗ 📜 chatbot.css             # AI chatbot interface styles
-┣ 📂 scripts/                   # JavaScript functionality
-┃ ┣ 📜 index.js                # Core application logic
-┃ ┗ 📜 chatbot.js              # AI chatbot implementation
-┣ 📂 images/                    # UI assets and icons
-┃ ┣ 🖼️ image.png               # Main logo/hero image
-┃ ┣ 👤 user.png                # User profile icon
-┃ ┣ ☀️ sun.png                 # Light theme icon
-┃ ┣ 🌙 moon.png                # Dark theme icon
-┃ ┣ 🌡️ celsius.png             # Celsius unit icon
-┃ ┣ 🌡️ fahrenheit.png          # Fahrenheit unit icon
-┃ ┣ 🌡️ kelvin.png              # Kelvin unit icon
-┃ ┣ 💬 comment.png             # Chat/comment icon
-┃ ┗ 👤 profile.png             # Profile image
-┗ 📜 config.js                  # API configuration (not in repo)
+┣ index.html                 # Main application entry point
+┣ README.md                  # Project documentation
+┣ package.json               # Project dependencies and scripts
+┣ stylesheets/               # CSS styling files
+┃ ┣ style.css               # Main application styles
+┃ ┣ stars.css               # Background star animation
+┃ ┣ sidebar.css             # Navigation sidebar styles
+┃ ┣ charts.css              # Chart visualization styles
+┃ ┣ table.css               # Weather table styles
+┃ ┗ chatbot.css             # AI chatbot interface styles
+┣ scripts/                   # JavaScript functionality
+┃ ┣ index.js                # Core application logic
+┃ ┗ chatbot.js              # AI chatbot implementation
+┣ images/                    # UI assets and icons
+┃ ┣ image.png               # Main logo/hero image
+┃ ┣ user.png                # User profile icon
+┃ ┣ sun.png                 # Light theme icon
+┃ ┣ moon.png                # Dark theme icon
+┃ ┣ celsius.png             # Celsius unit icon
+┃ ┣ fahrenheit.png          # Fahrenheit unit icon
+┃ ┣ kelvin.png              # Kelvin unit icon
+┃ ┣ comment.png             # Chat/comment icon
+┃ ┗ profile.png             # Profile image
+┗ config.js                  # API configuration (not in repo)
 ```
 
 ## 🔌 API Integration
