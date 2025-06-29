@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="stylesheets/charts.css" />
     <link rel="stylesheet" href="stylesheets/table.css" />
     <link rel="stylesheet" href="stylesheets/chatbot.css" />
-    <link rel="stylesheet" href="stylesheets/widget.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet"
@@ -210,20 +209,16 @@
             const geminiIcon = document.querySelector(".gemini-icon");
             const chatbox = document.querySelector(".chatbox");
             const closeChat = document.querySelector(".close-chat");
+            chatbox.style.display = "none"; 
 
-            // Ensure chatbox is hidden when the page loads
-            chatbox.style.display = "none"; // Ensure it's hidden by default
-
-            // Event listener to show/hide the chatbox when icon is clicked
             geminiIcon.addEventListener("click", function () {
-                console.log("Chat icon clicked!"); // To check the click event in console
+                console.log("Chat icon clicked!"); 
                 chatbox.style.display =
                     chatbox.style.display === "flex" ? "none" : "flex";
             });
 
-            // Event listener to close the chatbox when close button is clicked
             closeChat.addEventListener("click", function () {
-                console.log("Close button clicked!"); // To check the close event in console
+                console.log("Close button clicked!");
                 chatbox.style.display = "none";
             });
         });

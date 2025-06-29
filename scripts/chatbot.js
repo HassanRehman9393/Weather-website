@@ -22,18 +22,15 @@ function addMessage(message, isUser = false) {
     chatMessages.appendChild(messageDiv);
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-  // Add Weather Queries Detection in sendMessage function
+
 function sendMessage() {
     const message = userInput.value.trim();
     if (message) {
-        addMessage(message, true); // Add user message
+        addMessage(message, true); 
         userInput.value = '';
-
-        // Check if the message is weather-related
         if (isWeatherRelated(message)) {
             handleWeatherQuery(message);
         } else {
-            // Continue with the original gemini API request if it's not a weather-related query
             setTimeout(() => {
                 fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyC0jbl5Fu0bRVmWXlE6DCGV-jfGtC7qg7A`, {
                     method: 'POST',
@@ -73,7 +70,6 @@ function isWeatherRelated(message) {
 }
 
 // Function to handle weather-related queries
-// Function to handle weather-related queries
 function handleWeatherQuery(message) {
     let response = '';
 
@@ -95,12 +91,12 @@ function handleWeatherQuery(message) {
             response = 'No rain is expected today.';
         }
     } else if (message.toLowerCase().includes('temperature')) {
-        const currentTemp = allForecasts[0].main.temp; // Assuming the first forecast is the current temperature
+        const currentTemp = allForecasts[0].main.temp; 
         response = `The current temperature is ${currentTemp}°C.`;
     } else if (message.toLowerCase().includes('forecast')) {
         response = `The weather forecast includes temperatures ranging from ${Math.min(...allForecasts.map(f => f.main.temp))}°C to ${Math.max(...allForecasts.map(f => f.main.temp))}°C today.`;
     } else if (message.toLowerCase().includes('current weather')) {
-        const currentForecast = allForecasts[0]; // Use the first item for the current weather
+        const currentForecast = allForecasts[0]; 
         const currentTemp = currentForecast.main.temp;
         const weatherDescription = currentForecast.weather[0].description;
         const currentTime = new Date(currentForecast.dt_txt).toLocaleTimeString();
@@ -109,7 +105,7 @@ function handleWeatherQuery(message) {
         response = "I'm not sure how to respond to that weather-related query.";
     }
 
-    addMessage(response); // Add bot's response to the chat
+    addMessage(response); 
 }
 
 sendButton.addEventListener('click', sendMessage);

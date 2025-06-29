@@ -1,5 +1,6 @@
 /* General styles */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -27,7 +28,8 @@ header.header {
     flex-wrap: wrap;
 }
 
-.left-side, .right-side {
+.left-side,
+.right-side {
     display: flex;
     align-items: center;
 }
@@ -159,11 +161,11 @@ header.header {
     border-radius: 50%;
 }
 
-.temp-toggle input:checked + .slider {
+.temp-toggle input:checked+.slider {
     background-color: #2196F3;
 }
 
-.temp-toggle input:checked + .slider:before {
+.temp-toggle input:checked+.slider:before {
     transform: translateX(26px);
 }
 
@@ -195,15 +197,17 @@ header.header {
     font-size: 20px;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    margin-right: 20px; 
+    margin-right: 20px;
     padding-bottom: 70px;
     margin-top: 20px;
 }
 
 .weather-header {
     display: flex;
-    justify-content: space-between; /* Place city/country on the left and icon on the right */
-    align-items: center; /* Align the items vertically */
+    justify-content: space-between;
+    /* Place city/country on the left and icon on the right */
+    align-items: center;
+    /* Align the items vertically */
     margin-bottom: 20px;
     margin-top: 10px;
 }
@@ -211,7 +215,8 @@ header.header {
 .location-info h2 {
     font-size: 28px;
     font-weight: bold;
-    margin: 0; /* Remove any default margins */
+    margin: 0;
+    /* Remove any default margins */
 }
 
 .icon-container {
@@ -242,7 +247,7 @@ header.header {
     height: 1px;
     background: rgba(255, 255, 255, 0.5);
     margin: 5px 0;
-    width: 75%; 
+    width: 75%;
 }
 
 .light-theme .weather-widget {
@@ -269,11 +274,12 @@ header.header {
     header.header {
         flex-direction: row;
     }
-    
-    .left-side, .right-side {
+
+    .left-side,
+    .right-side {
         margin-bottom: 20px;
     }
-    
+
     .search-bar {
         max-width: 100%;
         margin-right: 0;
@@ -290,41 +296,50 @@ header.header {
         height: auto;
     }
 
-    .weather-widget .separator{
+    .weather-widget .separator {
         width: 50%;
     }
 
-    .center{
+    .center {
         gap: 10px;
 
     }
 
     .right-side {
-        position: fixed;  /* Fix it to the viewport */
-        top: 0;  /* Stick to the top */
-        right: 0;  /* Stick to the right */
+        position: fixed;
+        /* Fix it to the viewport */
+        top: 0;
+        /* Stick to the top */
+        right: 0;
+        /* Stick to the right */
         padding: 20px;
-        z-index: 1000;  /* Make sure it appears on top of other elements */ 
+        z-index: 1000;
+        /* Make sure it appears on top of other elements */
         gap: 0px;
     }
 
     .right-side .temp-toggle label.switch {
-        transform: scale(0.8); /* Scale down the toggle switch */
+        transform: scale(0.8);
+        /* Scale down the toggle switch */
     }
 
     .right-side img#themeToggle {
-        width: 30px;  /* Reduce the size of the theme toggle */
+        width: 30px;
+        /* Reduce the size of the theme toggle */
         height: 30px;
     }
 
     .right-side .user-profile img {
-        width: 30px;  /* Reduce the size of the user profile image */
+        width: 30px;
+        /* Reduce the size of the user profile image */
         height: 30px;
-        border-radius: 50%;  /* Ensure it's still circular */
+        border-radius: 50%;
+        /* Ensure it's still circular */
     }
 
     .right-side .temp-label {
-        font-size: 14px;  /* Reduce the font size */
+        font-size: 14px;
+        /* Reduce the font size */
     }
 }
 
@@ -358,34 +373,40 @@ header.header {
         height: 300px;
     }
 
-    .center{
+    .center {
         gap: 10px;
 
     }
 
     .right-side {
         padding: 20px;
-        z-index: 1000;  /* Make sure it appears on top of other elements */ 
+        z-index: 1000;
+        /* Make sure it appears on top of other elements */
         gap: 0px;
     }
 
     .right-side .temp-toggle label.switch {
-        transform: scale(0.8); /* Scale down the toggle switch */
+        transform: scale(0.8);
+        /* Scale down the toggle switch */
     }
 
     .right-side img#themeToggle {
-        width: 30px;  /* Reduce the size of the theme toggle */
+        width: 30px;
+        /* Reduce the size of the theme toggle */
         height: 30px;
     }
 
     .right-side .user-profile img {
-        width: 30px;  /* Reduce the size of the user profile image */
+        width: 30px;
+        /* Reduce the size of the user profile image */
         height: 30px;
-        border-radius: 50%;  /* Ensure it's still circular */
+        border-radius: 50%;
+        /* Ensure it's still circular */
     }
 
     .right-side .temp-label {
-        font-size: 14px;  /* Reduce the font size */
+        font-size: 14px;
+        /* Reduce the font size */
     }
 }
 
@@ -420,18 +441,17 @@ header.header {
         margin-top: 20px;
     }
 
-   .website-name{
-    font-size: 22px;
-   }
+    .website-name {
+        font-size: 22px;
+    }
 
-   .logo img{
-    width: 40px;
-    height: 40px;
-   }
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
 
     .right-side {
-        position: fixed; /* Change to fixed to stay in the viewport */
-       
+        position: fixed;
         margin-right: 0px;
         padding-top: 20px;
         margin-bottom: 10px;
@@ -445,22 +465,29 @@ header.header {
         margin-right: 2px;
     }
 
+    .left-side{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+    }
+
     .right-side .temp-toggle label.switch {
-        transform: scale(0.8); /* Scale down the toggle switch */
+        transform: scale(0.8);
     }
 
     .right-side img#themeToggle {
-        width: 35px;  /* Reduce the size of the theme toggle */
+        width: 35px;
         height: 35px;
     }
 
     .right-side .user-profile img {
-        width: 30px;  /* Reduce the size of the user profile image */
+        width: 30px;
         height: 30px;
-        border-radius: 50%;  /* Ensure it's still circular */
+        border-radius: 50%;
     }
 
     .right-side .temp-label {
-        font-size: 14px;  /* Reduce the font size */
+        font-size: 14px;
     }
 }

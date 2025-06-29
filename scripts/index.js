@@ -46,7 +46,7 @@ document.querySelector('.temp-toggle').replaceWith(tempToggle);
 
 const tempSwitch = document.getElementById('temp-switch');
 const tempLabel = document.getElementById('temp-label');
-let unit = 'metric'; // Default unit (Celsius)
+let unit = 'metric'; 
 
 // Event listener for toggle switch
 tempSwitch.addEventListener('change', () => {
@@ -125,14 +125,12 @@ function getWeatherByCoords(lat, lon) {
             weatherIconElem.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
             displayLocalTime(lat, lon);
-            getForecastForCharts(lat, lon); // Fetch the forecast data here for the charts
+            getForecastForCharts(lat, lon);
             getWeatherForecastByCoords(lat, lon);
-            // Update chart with current weather data (for current weather)
             updateChartData([temperature], ['Current'], description);
         })
         .catch(error => console.error('Error fetching the weather data:', error));
         return lat, lon;
-        console.log(lat, lon);
 }
 
 
@@ -192,21 +190,19 @@ function getForecastForCharts(lat, lon) {
     fetch(forecastUrl)
         .then(response => response.json())
         .then(data => {
-            const forecastList = data.list; // 5-day forecast data every 3 hours
+            const forecastList = data.list; 
             const temperatureData = [];
             const labels = [];
             const weatherConditions = [];
 
             forecastList.forEach((entry, index) => {
-                if (index % 8 === 0) {  // Select data every 24 hours (8 entries per day)
+                if (index % 8 === 0) { 
                     const date = new Date(entry.dt_txt).toLocaleDateString();
                     temperatureData.push(entry.main.temp);
                     labels.push(date);
                     weatherConditions.push(entry.weather[0].description);
                 }
             });
-
-            // Update chart data
             updateChartData(temperatureData, labels, weatherConditions);
         })
         .catch(error => console.error('Error fetching the forecast data:', error));
@@ -214,12 +210,10 @@ function getForecastForCharts(lat, lon) {
 
 
 function updateChartData(temperatureData, labels, weatherConditions) {
-    // Update bar chart
     barChart.data.labels = labels;
     barChart.data.datasets[0].data = temperatureData;
     barChart.update();
 
-    // Update doughnut chart with simple weather conditions
     const weatherCount = {
         clear: 0,
         cloudy: 0,
@@ -235,7 +229,6 @@ function updateChartData(temperatureData, labels, weatherConditions) {
     doughnutChart.data.datasets[0].data = [weatherCount.clear, weatherCount.cloudy, weatherCount.rain];
     doughnutChart.update();
 
-    // Update line chart
     lineChart.data.labels = labels;
     lineChart.data.datasets[0].data = temperatureData;
     lineChart.update();
@@ -268,13 +261,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const isClickInsideSidebar = sidebar.contains(event.target);
         const isClickOnLogo = logo.contains(event.target);
 
-        // If sidebar is active and click is outside sidebar and logo, close the sidebar
         if (sidebar.classList.contains('active') && !isClickInsideSidebar && !isClickOnLogo) {
             sidebar.classList.remove('active');
         }
     });
 
-    // Close sidebar when Dashboard or Table buttons are clicked
     dashboardButton.addEventListener('click', function () {
         sidebar.classList.remove('active');
     });
@@ -287,23 +278,20 @@ document.addEventListener('DOMContentLoaded', function () {
 function updateChartColors(theme) {
     if (theme === 'dark') {
         // Dark theme colors
-        // Light theme colors for bar chart
-        barChart.data.datasets[0].backgroundColor = 'rgba(255, 99, 71, 0.6)'; // Tomato
-        barChart.data.datasets[0].borderColor = 'rgba(255, 99, 71, 1)'; // Tomato (solid)
+        barChart.data.datasets[0].backgroundColor = 'rgba(255, 99, 71, 0.6)';
+        barChart.data.datasets[0].borderColor = 'rgba(255, 99, 71, 1)'; 
 
-        // Light theme colors for doughnut chart
         doughnutChart.data.datasets[0].backgroundColor = [
-            'rgba(255, 215, 0, 0.6)',  // Gold
-            'rgba(173, 216, 230, 0.6)', // Light Blue
-            'rgba(144, 238, 144, 0.6)'  // Light Green
+            'rgba(255, 215, 0, 0.6)', 
+            'rgba(173, 216, 230, 0.6)', 
+            'rgba(144, 238, 144, 0.6)'  
         ];
         doughnutChart.data.datasets[0].borderColor = [
-            'rgba(255, 215, 0, 1)',    // Gold (solid)
-            'rgba(173, 216, 230, 1)',  // Light Blue (solid)
-            'rgba(144, 238, 144, 1)'   // Light Green (solid)
+            'rgba(255, 215, 0, 1)',    
+            'rgba(173, 216, 230, 1)',  
+            'rgba(144, 238, 144, 1)'  
         ];
 
-        // Light theme colors for line chart
         lineChart.data.datasets[0].backgroundColor = 'rgba(255, 182, 193, 0.6)'; // Light Pink
         lineChart.data.datasets[0].borderColor = 'rgba(255, 182, 193, 1)'; // Light Pink (solid)
 
@@ -313,9 +301,9 @@ function updateChartColors(theme) {
         barChart.data.datasets[0].borderColor = 'rgba(75, 192, 192, 1)';
 
         doughnutChart.data.datasets[0].backgroundColor = [
-            'rgba(255, 99, 132, 0.2)', // Clear
-            'rgba(54, 162, 235, 0.2)', // Cloudy
-            'rgba(75, 192, 192, 0.2)'  // Rain
+            'rgba(255, 99, 132, 0.2)', 
+            'rgba(54, 162, 235, 0.2)', 
+            'rgba(75, 192, 192, 0.2)'  
         ];
         doughnutChart.data.datasets[0].borderColor = [
             'rgba(255, 99, 132, 1)',
@@ -374,7 +362,7 @@ var doughnutChart = new Chart(ctxDoughnut, {
         labels: ['Clear', 'Cloudy', 'Rain'],
         datasets: [{
             label: 'Weather Conditions',
-            data: [],  // Add actual data here
+            data: [], 
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -402,7 +390,7 @@ var doughnutChart = new Chart(ctxDoughnut, {
             delay: function(context) {
                 let delay = 0;
                 if (context.type === 'data' && context.mode === 'default' && context.dataIndex !== null) {
-                    delay = context.dataIndex * 300;  // Delay each slice by 300ms
+                    delay = context.dataIndex * 300; 
                 }
                 return delay;
             }
@@ -412,15 +400,15 @@ var doughnutChart = new Chart(ctxDoughnut, {
 
 
 // Line chart
-// Line chart with drop animation
 var ctxLine = document.getElementById('lineChart').getContext('2d');
 var lineChart = new Chart(ctxLine, {
     type: 'line',
+    
     data: {
         labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5'],
         datasets: [{
             label: 'Temperature',
-            data: [],  // Add actual data here
+            data: [],  
             backgroundColor: 'rgba(153, 102, 255, 0.2)',
             borderColor: 'rgba(153, 102, 255, 1)',
             borderWidth: 1
@@ -435,7 +423,7 @@ var lineChart = new Chart(ctxLine, {
             easing: 'easeInBounce',
             duration: 1500,
             y: {
-                from: -500, // Animate the points dropping in from above the canvas
+                from: -500, 
             }
         }
     }
@@ -449,11 +437,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Function to get 5-day weather forecast by coordinates
-let allForecasts = []; // Store all fetched forecasts
-let filteredForecasts = []; // Store filtered forecasts
-let currentPage = 0; // Track current page
-const itemsPerPage = 5; // Number of items to display per page
+
+let allForecasts = []; 
+let filteredForecasts = []; 
+let currentPage = 0; 
+const itemsPerPage = 5; 
 
 function getWeatherForecastByCoords(lat, lon) {
     const apiKey = '6efb492bbb7bbe9aa82b78c2d96c2b6c';
@@ -513,7 +501,7 @@ function applyFilter(filterType) {
     currentPage = 0; // Reset to first page
 
     if (filterType === 'default') {
-        filteredForecasts = [...allForecasts]; // Reset to original data
+        filteredForecasts = [...allForecasts];
     } else if (filterType === 'asc') {
         filteredForecasts = [...allForecasts].sort((a, b) => a.main.temp - b.main.temp);
     } else if (filterType === 'desc') {
@@ -530,7 +518,7 @@ function applyFilter(filterType) {
 
 function displayForecast(forecasts) {
     const tableBody = document.getElementById('weather-table-body');
-    tableBody.innerHTML = ''; // Clear previous data
+    tableBody.innerHTML = ''; 
 
     if (forecasts.length === 0) {
         const row = document.createElement('tr');
@@ -583,24 +571,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const tableButton = document.getElementById("table");
     const dashboardButton = document.getElementById("dashboard");
 
-    // Show main section and hide weather, map, charts when 'Table' button is clicked
     tableButton.addEventListener("click", function () {
-      mainSection.style.display = "block"; // Show main
-      weatherWidget.style.display = "none"; // Hide weather widget
-      mapSection.style.display = "none"; // Hide map
-      barchart.style.display = "none"; // Hide charts
-        doughnutChart.style.display = "none"; // Hide charts
-        lineChart.style.display = "none"; // Hide charts
+      mainSection.style.display = "block"; 
+      weatherWidget.style.display = "none"; 
+      mapSection.style.display = "none"; 
+      barchart.style.display = "none";
+        doughnutChart.style.display = "none"; 
+        lineChart.style.display = "none";
     });
 
-    // Show weather, map, charts and hide main section when 'Dashboard' button is clicked
     dashboardButton.addEventListener("click", function () {
-      mainSection.style.display = "none"; // Hide main
-      weatherWidget.style.display = "block"; // Show weather widget
-      mapSection.style.display = "block"; // Show map
-      barchart.style.display = "block"; // Show charts
-      doughnutChart.style.display = "block"; // Show charts
-        lineChart.style.display = "block"; // Show charts  
+      mainSection.style.display = "none"; 
+      weatherWidget.style.display = "block"; 
+      mapSection.style.display = "block"; 
+      barchart.style.display = "block"; 
+      doughnutChart.style.display = "block"; 
+        lineChart.style.display = "block"; 
 
     });
   });
